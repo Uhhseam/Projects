@@ -28,27 +28,17 @@ def main():
         print("\tBetter Luck Next Time!")
 
 def check():
-    lower = (input("Enter Lower bound: "))
-    upper = (input("Enter Upper bound: "))
-
-    lowerC = isinstance(lower, int)
-    upperC = isinstance(upper, int)
-    if lowerC and upperC == True:
-        value = "correct"
-    else:
-        value = "incorrect"
-        while value == "incorrect":
-            if lower and upper == False:
-                print("Invalid option, Please input an Integer")
-                lower = (input("Enter Lower bound1: "))
-                upper = (input("Enter Upper bound1: "))
-            elif lower and upper == True:
-                value = "correct"
-    
-    
+    value = "incorrect"
+    while value == "incorrect":
+        try:
+            lower = int(input("Enter Lower bound: "))
+            upper = int(input("Enter Upper bound: "))
+        except:
+            print("\nInvalid option, Please input an Integer\n")
+        else:
+            value = "correct"
     return lower, upper
     
-
 def loop():
     again = "y"
     while again == "y":
