@@ -13,18 +13,26 @@ word = random.choice(words)
 
 print("Guess the characters")
 
-guesses = ''
-
 turns = len(word)
+correct_guesses = ['_'] * turns
+print(correct_guesses)
 
-dash = "_"
+while '_' in correct_guesses:
+    guess = input("Enter a character: ").lower()
+    if not guess.isalpha():
+        print("Please enter a single alphabetic character.")
+        continue
+    if guess in correct_guesses:
+        print("You've already guessed that letter.")
+        continue
 
-failed = 0
-for i in range(turns):
-        list1 += dash
-        print(list1)
 
-'''if failed == 0:
+
+
+'''list1 = "_" * turns
+print('(', list1,')')
+
+if failed == 0:
         print("You Win")
         print("The word is: ", word)
         break
