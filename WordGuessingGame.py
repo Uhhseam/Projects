@@ -9,7 +9,6 @@ words = ('rainbow','computer','science','programing',
           'chrome','shibainu','lord','zombie')
 
 word = random.choice(words)
-print(word)
 
 print("Guess the characters")
 
