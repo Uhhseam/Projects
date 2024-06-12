@@ -11,10 +11,10 @@ def lose1():
     exit(0)
 
 # checks whether the numebrs are consecutive
-def check(xzy):
+def check(xyz):
     i = 1
     while i < len(xyz):
-        if (xyz[i] - xyz[i-1]) ! = 1:
+        if (xyz[i] - xyz[i-1]) != 1:
             return False
         i = i + 1
     return True
@@ -113,3 +113,27 @@ def start1():
                         #if inputs are not consecutive automatically disqualified
                         print("\nYou did not input consecutive integers.")
                         lose1()
+            print("\n\nCongratulation!")
+            print("You won!")
+            exit(0)
+        
+        else:
+            print("Wrong choice")
+
+game = True
+while game == True:
+    print("Player 2 is Computer.")
+    print("Do you want to play the 21 numbers game? (Yes / No)")
+    ans = input('>')
+    if ans == "Yes":
+        start1()
+    else:
+        print("Do you want to quit the game? (yes / no)")
+        nex = input('>')
+        if nex == "yes":
+            print("You are quitting the game...")
+            exit(0)
+        elif nex == "no":
+            print("Continuing...")
+        else:
+            print("Wrong choice")
