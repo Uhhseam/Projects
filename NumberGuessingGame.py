@@ -3,7 +3,14 @@ import random
 
 def main():
     lower, upper = lowerUpperCheck()
+    while lower >= upper:
+        print("\nLower number cannot be greater than Upper. Try again\n")
+        lower, upper = lowerUpperCheck()
+        
+
     x = random.randint(lower, upper)
+    print("\nYou have entered", lower, "for lower number and",
+           upper, "for upper number")
     print("\n\tYou only have",
             round(math.log(upper - lower + 1,2)),
             "chances to guess the integer! \n")
@@ -12,16 +19,16 @@ def main():
 
     while count < math.log(upper - lower + 1,2):
         count += 1
-        guess = int(input("Guess a number: "))
+        guess = numberCheck()
 
         if x == guess:
             print("Congratulations you did it in ",
                 count, " try")
             break
         elif x > guess:
-            print("You guessed to small!")
+            print("\nYou guessed to small!\n")
         elif x < guess:
-            print("You guessed too high!")
+            print("\nYou guessed too high!\n")
 
     if count >= math.log(upper - lower + 1,2):
         print("The number is %d" % x)
